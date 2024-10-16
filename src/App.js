@@ -9,7 +9,7 @@ export default function Bio() {
         <br />
         <br />
         <b>
-          And <i>pictures</i>
+          And <i>pictures </i>
         </b>
         of scientists!
       </p>
