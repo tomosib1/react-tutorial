@@ -1,14 +1,13 @@
-import FancyText from './FancyText'
-import InspirationGenerator from './InspirationGenerator'
-import Copyright from './Copyright'
-
-export default function App() {
+export default function Signup() {
   return (
-    <>
-      <FancyText title text="Get Inspired App" />
-      <InspirationGenerator>
-        <Copyright year={2004} />
-      </InspirationGenerator>
-    </>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault()
+        alert('Submitting!')
+      }}
+    >
+      <input />
+      <button>Send</button>
+    </form>
   )
 }
