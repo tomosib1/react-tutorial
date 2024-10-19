@@ -1,34 +1,35 @@
-function Drink({ name }) {
-  let plant, coffeine, age
-  if (name == 'tea') {
-    plant = 'leaf'
-    coffeine = '15–70 mg/cup'
-    age = '4,000+ years'
-  } else {
-    plant = 'bean'
-    coffeine = '80–185 mg/cup'
-    age = '1,000+ years'
-  }
-  return (
-    <section>
-      <h1>{name}</h1>
-      <dl>
-        <dt>Part of plant</dt>
-        <dd>{plant}</dd>
-        <dt>Caffeine coffeine</dt>
-        <dd>{coffeine}</dd>
-        <dt>Age</dt>
-        <dd>{age}</dd>
-      </dl>
-    </section>
-  )
-}
+import { people } from './data.js'
+import { getImageUrl } from './utils.js'
 
-export default function DrinkList() {
+export default function List() {
+  const chemists = people.filter((person) => person.profession === 'chemist')
+  const chemistListItems = chemists.map((person) => (
+    <li key={person.id}>
+      <img src={getImageUrl(person)} alt={person.name} />
+      <p>
+        <b>{person.name}:</b>
+        {' ' + person.profession + ' '}
+        known for {person.accomplishment}
+      </p>
+    </li>
+  ))
+  const others = people.filter((person) => person.profession !== 'chemist')
+  const otherItemList = others.map((person) => (
+    <li key={person.id}>
+      <img src={getImageUrl(person)} alt={person.name} />
+      <p>
+        <b>{person.name}:</b>
+        {' ' + person.profession + ' '}
+        known for {person.accomplishment}
+      </p>
+    </li>
+  ))
   return (
-    <div>
-      <Drink name="tea" />
-      <Drink name="coffee" />
-    </div>
+    <article>
+      <h1>Chemists</h1>
+      <ul>{chemistListItems}</ul>
+      <h1>Others</h1>
+      <ul>{otherItemList}</ul>
+    </article>
   )
 }
