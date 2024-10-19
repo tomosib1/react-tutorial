@@ -1,31 +1,34 @@
-function Card({ children }) {
+function Drink({ name }) {
+  let plant, coffeine, age
+  if (name == 'tea') {
+    plant = 'leaf'
+    coffeine = '15–70 mg/cup'
+    age = '4,000+ years'
+  } else {
+    plant = 'bean'
+    coffeine = '80–185 mg/cup'
+    age = '1,000+ years'
+  }
   return (
-    <div className="card">
-      <div className="card-content">{children}</div>
-    </div>
+    <section>
+      <h1>{name}</h1>
+      <dl>
+        <dt>Part of plant</dt>
+        <dd>{plant}</dd>
+        <dt>Caffeine coffeine</dt>
+        <dd>{coffeine}</dd>
+        <dt>Age</dt>
+        <dd>{age}</dd>
+      </dl>
+    </section>
   )
 }
 
-export default function Profile() {
+export default function DrinkList() {
   return (
     <div>
-      <Card>
-        <h1>Photo</h1>
-        <img
-          className="avatar"
-          src="https://i.imgur.com/OKS67lhm.jpg"
-          alt="Aklilu Lemma"
-          width={100}
-          height={100}
-        />
-      </Card>
-      <Card>
-        <h1>About</h1>
-        <p>
-          Aklilu Lemma was a distinguished Ethiopian scientist who discovered a natural treatment to
-          schistosomiasis.
-        </p>
-      </Card>
+      <Drink name="tea" />
+      <Drink name="coffee" />
     </div>
   )
 }
