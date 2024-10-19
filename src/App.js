@@ -1,13 +1,10 @@
-export default function Signup() {
+import Gallery from './Gallery.js'
+
+export default function Page() {
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        alert('Submitting!')
-      }}
-    >
-      <input />
-      <button>Send</button>
-    </form>
+    <div className="Page">
+      <Gallery />
+      <Gallery />
+    </div>
   )
 }
