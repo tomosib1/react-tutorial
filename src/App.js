@@ -1,10 +1,8 @@
-import Gallery from './Gallery.js'
-
-export default function Page() {
+export default function Clock({ time }) {
   return (
-    <div className="Page">
-      <Gallery />
-      <Gallery />
-    </div>
+    <>
+      <h1>{time}</h1>
+      <input />
+    </>
   )
 }
